@@ -1,0 +1,106 @@
+{
+  "_id" : "t56dJWBy",
+  "name" : "Demo Operaciones - Elección Monitores de Soporte",
+  "organization_name" : "Demo Operaciones EVoting",
+  "configuration" : {
+    "logo_url" : "https://s3.amazonaws.com/evoting/Demo+abierto/Logo+E-Voting.png",
+    "identification_field" : "email",
+    "ballot_box_url" : "https://ballot-box.evoting.cl",
+    "home_url" : "https://demos.evoting.cl/",
+    "encrypter_url" : "https://vote.evoting.cl/election/%s",
+    "bulletin_url" : "https://bulletin.evoting.cl/?id=%s",
+    "time_zone" : "America/Santiago",
+    "templates" : [ {
+      "name" : "cast_run_serial_with_ticket.jade",
+      "content" : "https://s3.amazonaws.com/evoting/Novasalud/cast_run_serial_with_ticket.jade"
+    } ],
+    "support" : "Consultas y soporte técnico: &nbsp;&nbsp; <span class=\"glyphicon glyphicon-earphone\"></span>&nbsp; +56 (2) 2840 5660 &nbsp;&nbsp;&nbsp; <span class=\"glyphicon glyphicon-envelope\"></span>&nbsp; soporte@evoting.cl",
+    "default_district_id" : "D01",
+    "safe_conduct_timeout_seconds" : 172800,
+    "advanced_config" : {
+      "factor" : 1,
+      "registration_required" : false,
+      "can_choose_ballotbox" : false,
+      "open_registration" : true,
+      "default_state" : "ready",
+      "identity_regex" : ".*",
+      "restricted" : false,
+      "weighted" : false,
+      "listed" : true,
+      "result_delay" : 0,
+      "max_ips" : 0,
+      "max_registrations" : 0
+    }
+  },
+  "districts" : [ {
+    "_id" : "D01",
+    "name" : "Distrito único",
+    "description" : "Distrito único para la votación",
+    "ballotboxes" : [ {
+      "_id" : "BX01",
+      "name" : "mesa única",
+      "description" : "única mesa de votación",
+      "ballotbox_type" : "electronic"
+    } ],
+    "default_ballotbox_id" : "BX01",
+    "question_ids" : [ "Q01" ]
+  } ],
+  "questions" : [ {
+    "_id" : "Q01",
+    "name" : "Elija a continuación 6 (tres) candidatos para Monitores de Soporte",
+    "relative_position" : 0,
+    "min_options" : 0,
+    "max_options" : 3,
+    "accept_null" : true,
+    "accept_null_explicit" : false,
+    "accept_blank_explicit" : false,
+    "choices" : [ {
+      "name" : "George Washington",
+      "value" : 1,
+      "absolute_position" : 2,
+      "relative_position" : 1
+    }, {
+      "name" : "Barack Obama",
+      "value" : 1,
+      "absolute_position" : 3,
+      "relative_position" : 2
+    }, {
+      "name" : "Martin Luther King",
+      "value" : 1,
+      "absolute_position" : 4,
+      "relative_position" : 3
+    }, {
+      "name" : "Mao Zedong",
+      "value" : 1,
+      "absolute_position" : 5,
+      "relative_position" : 4
+    }, {
+      "name" : "Margaret Thatcher",
+      "value" : 1,
+      "absolute_position" : 6,
+      "relative_position" : 5
+    }, {
+      "name" : "Fernando Morales :D",
+      "value" : 1,
+      "absolute_position" : 7,
+      "relative_position" : 5
+    } ],
+    "lists" : [ ]
+  } ],
+  "encrypters" : [ {
+    "name" : "Encriptador de evoting",
+    "public_key" : "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEUxsTA8e5oKRmFMir2F4hIwC2unbBgkJTywrqa9zJWrWH3G+mw7qsaabeCBpUp0BwVisiyteqVbhZwN0DJeGOfg==",
+    "state" : "enabled"
+  } ],
+  "authorization_authorities" : [ {
+    "name" : "authentificador de evoting",
+    "public_key" : "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEJ6CVrqN6RZk/TfSuexVxLxMzI2f+B1XOt/Om5XuHMS4NmM7lPLU7/ffMp0Op8PiilC/OdJwWSMXO3+4H2cdCgg==",
+    "state" : "enabled"
+  }, {
+    "name" : "ballotbox de evoting",
+    "public_key" : "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEAYZ5SoBLxd62H+fXTGU9OIxk50wD1jSqcDvVGzgEEbMRlJzE6HKoBqK3UvpDgM18eZvqWq42uAsLJtgAbT3xTA==",
+    "state" : "enabled"
+  } ],
+  "mobile_authorities" : [ ],
+  "drop_in_places" : [ ]
+}
